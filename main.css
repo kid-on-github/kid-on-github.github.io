@@ -28,6 +28,10 @@ h5, p{
     box-sizing:border-box;
 }
 
+#projects {
+    margin:15px 10px;
+}
+
 
 #top{
     text-align: center;
