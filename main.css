@@ -42,7 +42,11 @@ h5, p{
 #top > div > *{
     white-space: nowrap;
 }
-#name{font-weight: bold;}
+#name{
+    font-weight: bold;
+    word-break: break-word;
+    white-space: pre-line !important;
+}
 #profileImg{
     width:100%;
     margin-bottom:10px;
