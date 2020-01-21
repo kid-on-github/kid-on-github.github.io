@@ -7,7 +7,6 @@ updateLink = (id, url) => {
 }
 
 buildTop = (user) => {
-    console.log(user)
     // update profile image
     document.getElementById('profileImg').setAttribute('src', user['avatar_url'])
 
@@ -18,13 +17,6 @@ buildTop = (user) => {
     updateLink('githubUrl', user['html_url'])
     updateLink('websiteUrl', user['blog'])
     updateLink('linkedinUrl', 'https://www.linkedin.com/in/mike-pete/')
-
-
-
-    // 
-    // avatar_url
-    // login
-    // name
 }
 
 buildPage = (repos) => {
@@ -60,10 +52,15 @@ buildPage = (repos) => {
         inner.appendChild(desc)
         inner.appendChild(lang)
 
+        // a (make tiles clickable)
+        let a = document.createElement('a')
+        a.appendChild(inner)
+        a.href = repos[i]['html_url']
+
         // outer container
         let outer = document.createElement('div')
         outer.setAttribute('class', 'col-lg-3 col-md-4');
-        outer.appendChild(inner)
+        outer.appendChild(a)
         
         // add container
         document.getElementById('main').appendChild(outer)
@@ -72,14 +69,14 @@ buildPage = (repos) => {
 
 async function getUser(){
     let api = 'https://api.github.com/users/kid-on-github'
-    api = './user.json'
+    //api = './user.json'
     let user = await fetch(api)
     buildTop(await user.json())
 }
 
 async function getRepos(){
     let api = 'https://api.github.com/users/kid-on-github/repos?sort=created'
-    api = './repos.json'
+    //api = './repos.json'
     let repos = await fetch(api)
     buildPage(await repos.json())
 }
