@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-    <!-- Project inspired by my friend Blake (https://blakeanedved.github.io/) -->
+    <!-- Project inspired by my friend Blake Nedved (https://blakeanedved.github.io/) -->
+    <!--
+        Mike Peterson 01/20/2020
+        This is a Github repo summary intended to be used with Github pages.
+        It uses Github's api to display your Github user information along with your Github repos.
+        Repos that don't have a description are not displayed.
+        Repos that have a description ending in [x] are not displayed.
+    -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,10 +23,23 @@
     <!-- custom -->   
     <link rel="stylesheet" href="main.css">
     <script src="main.js"></script>
-    
+
 </head>
 <body>
     <div class="container-fluid">
+        <div class="row">
+            <div class="col-12" id="top">
+                <div>
+                    <img src="profile.png" alt="" id="profileImg">
+                    <h1 id="name"></h1>
+                    <p>Github: <a href="" id="githubUrl">link</a></p>
+                    <p>Website: <a href="" id="websiteUrl">link</a></p>
+                    <p>LinkedIn: <a href="" id="linkedinUrl">link</a></p>
+
+
+                </div>
+            </div>
+        </div>
         <div class="row" id="main"></div>
     </div>    
 

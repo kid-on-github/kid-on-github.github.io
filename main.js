@@ -1,5 +1,33 @@
+updateLink = (id, url) => {
+    console.log(id,url)
+    document.getElementById(id).text = url
+    document.getElementById(id).href = url
+
+
+}
+
+buildTop = (user) => {
+    console.log(user)
+    // update profile image
+    document.getElementById('profileImg').setAttribute('src', user['avatar_url'])
+
+    // update title and name based on user info (in case someone else want's to use this as a template)
+    document.getElementById('name').innerHTML = document.title = user['name']
+
+    // update urls
+    updateLink('githubUrl', user['html_url'])
+    updateLink('websiteUrl', user['blog'])
+    updateLink('linkedinUrl', 'https://www.linkedin.com/in/mike-pete/')
+
+
+
+    // 
+    // avatar_url
+    // login
+    // name
+}
+
 buildPage = (repos) => {
-    //console.log(repos)
     // loop through repos
     for (let i = 0; i < repos.length; i++){
         
@@ -11,7 +39,6 @@ buildPage = (repos) => {
         let exclude = repos[i]['description'].substring(descLen - 3).toLowerCase() == '[x]'
         if (exclude) continue
 
-        
         // title
         let title = document.createElement('h5')
         title.textContent = repos[i]['name']
@@ -25,7 +52,6 @@ buildPage = (repos) => {
         lang.textContent = repos[i]['language']
         lang.setAttribute('type', repos[i]['language'])
         lang.setAttribute('class', 'lang');
-
         
         // inner container
         let inner = document.createElement('div')
@@ -44,14 +70,19 @@ buildPage = (repos) => {
     }
 }
 
+async function getUser(){
+    let api = 'https://api.github.com/users/kid-on-github'
+    api = './user.json'
+    let user = await fetch(api)
+    buildTop(await user.json())
+}
 
-async function getRepos() {
-    let api = 'https://api.github.com/users/kid-on-github/repos?sort=updated'
+async function getRepos(){
+    let api = 'https://api.github.com/users/kid-on-github/repos?sort=created'
     api = './repos.json'
     let repos = await fetch(api)
     buildPage(await repos.json())
-    console.log('running')
 }
 
+getUser()
 getRepos()
-console.log('hello')

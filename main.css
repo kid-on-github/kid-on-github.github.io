@@ -10,9 +10,17 @@
     --csharp:   #178600;
 }
 
+body{
+    padding:0px 50px 50px 50px;
+}
 
+@media (min-width: 1199.98px) {
+    body > *{
+        max-width: 1300px;
+    }
+}
 
-*{
+h5, p{
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: wrap;
@@ -20,9 +28,26 @@
     box-sizing:border-box;
 }
 
-body{
-    padding:0px 50px;
+
+#top{
+    text-align: center;
+    margin: 100px 0;
 }
+#top > div{
+    margin:auto;
+    width: calc(100vw / 2);
+    max-width:400px;
+    text-align: left;
+}
+#top > div > *{
+    white-space: nowrap;
+}
+#name{font-weight: bold;}
+#profileImg{
+    width:100%;
+    margin-bottom:10px;
+}
+
 
 #main > * {
     //border:1px solid red;
@@ -37,6 +62,10 @@ body{
     //border:1px solid var(--html);
     box-shadow: 0px 2px 2px .5px rgba(0,0,0,.2);
     background-color: rgba(0,0,0,0.03)
+}
+
+.inner > h5{
+    font-weight: bold;
 }
 
 
