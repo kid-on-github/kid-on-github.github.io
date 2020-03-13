@@ -8,6 +8,7 @@
     --java:     #b07219;
     --css:      #563d7c;
     --csharp:   #178600;
+    --c:        #555555;
 }
 
 body{
@@ -127,4 +128,8 @@ p, h5{
 
 [type="css"] {
     background-color: var(--css);
+}
+
+[type="C"] {
+    background-color: var(--c);
 }
