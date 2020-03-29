@@ -1,6 +1,6 @@
 updateLink = (id, url) => {
     console.log(id,url)
-    document.getElementById(id).text = url
+    //document.getElementById(id).text = url
     document.getElementById(id).href = url
 
 
@@ -68,15 +68,15 @@ buildPage = (repos) => {
 }
 
 async function getUser(){
-    let api = 'https://api.github.com/users/kid-on-github'
-    //api = './user.json'
+    //let api = 'https://api.github.com/users/kid-on-github'
+    let api = './user.json'
     let user = await fetch(api)
     buildTop(await user.json())
 }
 
 async function getRepos(){
-    let api = 'https://api.github.com/users/kid-on-github/repos?sort=created'
-    //api = './repos.json'
+    //let api = 'https://api.github.com/users/kid-on-github/repos?sort=created'
+    let api = './repos.json'
     let repos = await fetch(api)
     buildPage(await repos.json())
 }

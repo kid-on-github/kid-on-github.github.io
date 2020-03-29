@@ -8,6 +8,9 @@
         Repos that don't have a description are not displayed.
         Repos that have a description ending in [x] are not displayed.
     -->
+    <!--
+        Icons from: https://www.iconfinder.com/iconsets/free-social-icons
+    -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,21 +30,41 @@
 </head>
 <body>
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-12" id="top">
-                <div>
-                    <img src="profile.png" alt="" id="profileImg">
-                    <h1 id="name"></h1>
-                    <p>Github: <a href="" id="githubUrl">link</a></p>
-                    <p>Website: <a href="" id="websiteUrl">link</a></p>
-                    <p>LinkedIn: <a href="" id="linkedinUrl">link</a></p>
+        <div class="row" id="top">
 
+                    <div class="col-12 col-lg-3 col-md-4 col-sm-12">
+                        <div id="profileWrapper" class="row">
+                            <div id="profileImageWrapper" class="col-sm-6 col-12 col-md-12">
+                                <img src="profile.png" alt="profile picture" id="profileImg">
+                            </div>
+                            <div class="col-sm-6 col-12 col-md-12" id="profileInfo">
+                                <div>
+                                    <h1 id="name"></h1>
+                                    <a href="" id="linkedinUrl"><img src="./linkedin.png" alt="Linkedin" class="icons"></a>
+                                    <a href="" id="githubUrl"><img src="./github.png" alt="github" class="icons"></a>
+                                    <a href="https://www.instagram.com/mik.pete/" id="instagramUrl"><img src="./instagram.png" alt="instagram" class="icons"></a>
+                                    <!--
+                                        <a href="" id="websiteUrl"><img src="" alt="" class="icons"></a>
+                                    -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-9 col-md-8 col-sm-12">
+                        <div id="headerText">
+                            <h2>The Portfolio Project</h2>
+                            <h6>Built by Mike Peterson</h6>
+                            <br>
+                            <ul>
+                                <li>Hosting is FREE thanks to <a href="https://pages.github.com/">Github Pages</a></li>
+                                <li>Info is fetched from <a href="https://developer.github.com/v3/">Github's APIs</a>, so it's always up to date</li>
+                                <li><a href="">Bootstrap</a> makes sure it always looks good</li>
+                                <li>It's <a href="https://github.com/kid-on-github/kid-on-github.github.io">open source</a>. So fork it, and make it your own!</li>
+                            </ul>
 
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <h3 id="projects">Projects on Github:</h3>
+                        </div>
+                    </div>
+
         </div>
         <div class="row" id="main">
         </div>
