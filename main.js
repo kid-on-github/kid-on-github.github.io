@@ -15,8 +15,8 @@ buildTop = (user) => {
 
     // update urls
     updateLink('githubUrl', user['html_url'])
-    updateLink('websiteUrl', user['blog'])
     updateLink('linkedinUrl', 'https://www.linkedin.com/in/mike-pete/')
+    updateLink('instagramUrl', 'https://www.instagram.com/mik.pete/')
 }
 
 buildPage = (repos) => {
