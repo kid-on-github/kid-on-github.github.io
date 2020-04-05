@@ -75,7 +75,7 @@ async function getUser(){
 }
 
 async function getRepos(){
-    let api = 'https://api.github.com/users/kid-on-github/repos?sort=created'
+    let api = 'https://api.github.com/users/kiAshWithGithub/repos?sort=created'
     //let api = './repos.json'
     let repos = await fetch(api)
     buildPage(await repos.json())
