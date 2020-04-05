@@ -68,7 +68,7 @@ buildPage = (repos) => {
 }
 
 async function getUser(){
-    let api = 'https://api.github.com/users/kid-on-github'
+    let api = 'https://api.github.com/users/AshWithGithub'
     //let api = './user.json'
     let user = await fetch(api)
     buildTop(await user.json())
