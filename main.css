@@ -43,7 +43,7 @@ li {
 
 
 body{
-    background-image: url("./graystripes.png");
+    /*background-image: url("./graystripes.png");*/
     background-color: rgba(0, 0, 0, .001);
     background-attachment: fixed;
     background-repeat: repeat;
